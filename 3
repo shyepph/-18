@@ -1,0 +1,35 @@
+class Monsters:
+    def __init__(self, name = "Неизвестная тварь", hp = "100", dmg = "10" ):
+        self.name = name
+        self.hp = int(hp)
+        self.dmg = int(dmg)
+        print(f"имя: {self.name}")
+        print(f'здоровье: {self.hp}')
+        print(f'урон {self.dmg}')
+        print()
+
+
+name1, hp1, dmg1 = input("введите характеристики монстра через пробел(имя, хп и урон): ").split()
+name2, hp2, dmg2 = input("введите характеристики второго монстра через пробел(имя, хп и урон): ").split()
+
+
+monster1 = Monsters(name1, hp1, dmg1)
+monster2 = Monsters(name2, hp2, dmg2)
+
+print("Начался бой!")
+while True:
+    print(f"{monster1.name} наносит удар!")
+    monster2.hp -= monster1.dmg
+    print(f"у {monster2.name} осталось {monster2.hp} HP")
+    if monster2.hp == 0:
+        print(f"Победил {monster1.name}!!!")
+        break
+    elif:
+
+    print(f"{monster2.name} наносит удар!")
+    monster2.hp -= monster1.dmg
+    print(f"у {monster1.name} осталось {monster1.hp} HP")
+
+    if monster1.hp == 0:
+        print(f"Победил {monster2.name}!!!")
+        break
