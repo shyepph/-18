@@ -1,0 +1,14 @@
+class Monster:
+    def __init__(self, name = 'Люкан', power = '15', hp = '90'):
+        self.name = name
+        self.power = power
+        self.hp = hp
+
+    def mutate(self):
+        self.power += 5
+        print(f'{self.name} мутирует! Сила увеличина!')
+        print(f'⚔️: {self.power}')
+        
+    def rets(self):
+        self.hp += 10
+        
