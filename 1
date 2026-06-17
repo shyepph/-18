@@ -1,0 +1,11 @@
+class Monsters:
+    def __init__(self, name = "Неизвестная тварь", hp = "100", dmg = "10" ):
+        self.name = name
+        self.hp = hp
+        self.dmg = dmg
+        print(f"имя: {self.name}")
+        print(f'здоровье: {self.hp}')
+        print(f'урон {self.dmg}')
+
+monster1 = Monsters("Vampire",  120, 35)
+monster2 = Monsters('Lucane', 100, 40)
