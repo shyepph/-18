@@ -1,0 +1,15 @@
+class Monsters:
+    def __init__(self, name = 'Гаргулия', hp = '100', dmg = '20'):
+        self.name = name
+        self.hp = hp
+        self.dmg = dmg
+
+    def show_info(self):
+        print(f'--- Статус ---')
+        print(f'Имя: {self.name}')
+        print(f'Здоровье: {self.hp}')
+        print(f'Урон: {self.dmg}')
+        print(f'--------------')
+
+m1 = Monsters('Горгулья', 120, 18)
+m1.show_info()
