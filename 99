@@ -1,0 +1,29 @@
+class DarkEntity:
+    def __init__(self, name, species, lvl):
+        self.__name = name
+        self.__species = species
+        self.__lvl = lvl
+
+
+boss = DarkEntity ('Балор', 'Высший демон', '99')
+print(boss.__name(), boss.__species(), boss.__lvl())
+
+
+
+class DarkEntity:
+    def __init__(self, name, species, lvl):
+        self.__name = name
+        self.__species = species
+        self.__lvl = lvl
+
+    def get_name (self):
+        return self.__name
+
+    def get_species (self):
+        return self.__species
+
+    def get_lvl (self):
+        return self.__lvl
+
+boss = DarkEntity ('Балор', 'Высший демон', '99')
+print(boss.get_name(), boss.get_species(), boss.get_lvl())
