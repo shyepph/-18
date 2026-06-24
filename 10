@@ -10,12 +10,16 @@ class Inventory:
     def change_gold (self, amount):
         new_balance = self.__gold + amount
 
-    if new_balance <=0:
-        print ('Недостаточно золота для сделки')
-    else:
-        self.__gold = new_balance
+        if new_balance < 0:
+            print ('Недостаточно золота для сделки')
+        else:
+            self.__gold = new_balance
+            print('Сделка состоялась')
 
-print(inv.get_gold())
-inv = inventory (100)
-inv.change_gold(50)
-inv.change_gold(-150)
+
+bag = Inventory (50)
+print(bag.get_gold())
+bag.change_gold(-30)
+bag.change_gold(10)
+print(bag.get_gold())
+bag.change_gold(-100)
