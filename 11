@@ -1,0 +1,5 @@
+class Warewolf:
+    def __init__(self, name):
+        self.__name = name
+        self.__form = 'Человек'
+        self.__power  = 15
