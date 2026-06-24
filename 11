@@ -1,5 +1,26 @@
-class Warewolf:
+class Werewolf:
+    
+    
     def __init__(self, name):
         self.__name = name
-        self.__form = 'Человек'
-        self.__power  = 15
+        self.__form = "Человек"
+        self.__power = 15
+
+    def get_status(self):
+        print(f'{self.__name} сейчас в форме: {self.__form}. Сила: {self.__power}')
+
+    def transform(self):
+        if self.__form == "Человек":
+            self.__form = 'Волк'
+            self.__power = 45
+            print(f'{self.__name} обрастает шерстью')
+
+        elif self.__form == "Волк":
+            self.__form = "Человек"
+            self.__power = 45
+            print({f'{self.__name} снова становится человеком'})
+
+lycan = Werewolf('люкан')
+lycan.get_status()
+lycan.transform()
+lycan.get_status()
