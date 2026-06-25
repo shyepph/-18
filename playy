@@ -32,12 +32,12 @@ class Monster:
         print(f"[{self.__name}] HP: {self.__hp}")
 
     def take_damage(self, damage):
-        #Стандартная версия получения урона
+        #СТАНДАРТ ПОЛУЧЕНИЯ УРОНА
         self.set_hp(self.get_hp() - damage)
         print(f"{self.get_name()} получает {damage} урона. HP: {self.get_hp()}")
 
     def attack_hunter(self, hunter):
-        # Атака охотника
+        # АТАКА ОХОТНИКА
         hunter.set_hp(hunter.get_hp() - self.__dmg)
         print(f"{self.get_name()} атакует охотника! Урон: {self.__dmg}")
 
@@ -48,7 +48,7 @@ class Zombie(Monster):
         super().__init__(name, 120, 10)
 
     def take_damage(self, damage):
-        # Зомби просто получает урон, но с уникальным сообщением
+        # зомби просто получает урон но с уникальным сообщением
         self.set_hp(self.get_hp() - damage)
         print(f"{self.get_name()} теряет конечность! Получено: {damage}. HP: {self.get_hp()}")
 
@@ -58,7 +58,7 @@ class Vampire(Monster):
         super().__init__(name, 80, 15)
 
     def take_damage(self, damage):
-        # Поглощает 5 урона
+        # ПОГЛОЩЕНИЕ 5 УРОНА
         absorbed = 5
         actual_damage = max(0, damage - absorbed)
         self.set_hp(self.get_hp() - actual_damage)
@@ -70,7 +70,7 @@ class Ghost(Monster):
         super().__init__(name, 60, 20)
 
     def take_damage(self, damage):
-        # 30% шанс уклниться
+        # 30% ШАНСА НА УКЛОНЕНИЕ
         if random.random() < 0.3:
             print(f"{self.get_name()} уклоняется от атаки! HP: {self.get_hp()}")
         else:
@@ -87,7 +87,7 @@ class Werewolf(Monster):
         self.set_hp(self.get_hp() - damage)
         print(f"{self.get_name()} получает {damage} урона. HP: {self.get_hp()}")
 
-        # При HP < 50 трансформирруется
+        # ПРИ HP < 50 ТРАНСФОРМИРУЕТСЯ
         if self.get_hp() < 50 and not self.__transformed:
             self.__transformed = True
             print(f"{self.get_name()} трансформируется в свою истинную форму! Сила увеличивается!")
@@ -102,7 +102,7 @@ class Weapon:
         return self.__name
 
     def use(self, monster):
-        # Базовый метод использования оружия (будет переопределён)
+
         pass
 
 
@@ -245,9 +245,9 @@ def run_game():
                 if 1 <= choice <= 3:
                     break
                 else:
-                    print("Пожалуйста, выберите номер от 1 до 3")
+                    print("Пожалуйста выберите номер от 1 до 3")
             except ValueError:
-                print("Пожалуйста, введите число!")
+                print("Пожалуйста введите число!")
 
         hunter.attack(choice, monster)
 
